@@ -14,12 +14,8 @@ import matplotlib.pyplot as plt
 
 import streamlit as st
 
-from docx import Document
-
 import numpy as np
 import pandas as pd
-
-
 
 import fastf1
 from fastf1 import plotting
@@ -57,7 +53,7 @@ div.stButton > button:active {
 
 plotting.setup_mpl()
 
-fastf1.Cache.enable_cache('C:\Cache')  # optional but recommended
+session_picker=st.selectbox('Select Race',('C11', 'C12', 'C21', 'C22'))
 
 session = fastf1.get_session(2022, 'Hungarian Grand Prix', 'Q')
 session.load()
