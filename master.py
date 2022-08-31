@@ -4,7 +4,8 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN 
 ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
-
+import re
+import sys
 import openpyxl
 import time
 import plotly.express as px 
@@ -18,8 +19,15 @@ from docx import Document
 import numpy as np
 import pandas as pd
 
-import re
-import sys
+
+
+import fastf1
+from fastf1 import plotting
+from matplotlib import pyplot as plt
+import pandas as pd
+from timple.timedelta import strftimedelta
+import fastf1.plotting
+from fastf1.core import Laps
 
 st.set_page_config(page_title="SLS Tests",page_icon="⏩")
 
@@ -46,3 +54,10 @@ div.stButton > button:active {
 	top:3px;
 }
 </style>""", unsafe_allow_html=True)
+
+plotting.setup_mpl()
+
+fastf1.Cache.enable_cache('C:\Cache')  # optional but recommended
+
+session = fastf1.get_session(2022, 'Hungarian Grand Prix', 'Q')
+session.load()
