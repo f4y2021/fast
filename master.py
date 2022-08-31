@@ -27,7 +27,7 @@ from fastf1.core import Laps
 
 st.set_page_config(page_title="Brooom",page_icon="🏎")
 
-fastf1.Cache.enable_cache('C:\Cache')
+fastf1.Cache.enable_cache('')
 
 m = st.markdown("""
 <style>
