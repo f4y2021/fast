@@ -25,7 +25,7 @@ from timple.timedelta import strftimedelta
 import fastf1.plotting
 from fastf1.core import Laps
 
-st.set_page_config(page_title="Brooom",page_icon="⏩")
+st.set_page_config(page_title="Brooom",page_icon="🏎")
 
 fastf1.Cache.enable_cache('C:\Cache')
 
